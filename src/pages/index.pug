@@ -1,10 +1,6 @@
-extends ../layouts/main
-
-block prepend extraHead
-  meta(name='theme-color' content='#2cd5c4')
-
-block append extraHead
-  meta(name='og:title' content='Keepsake — Digital & Branding Agency')
+extends ../layouts/main.pug
 
 block content
-  include ../components/content
+  include ../components/content-top.pug
+  include ../components/content-middle.pug
+  include ../components/content-bottom.pug

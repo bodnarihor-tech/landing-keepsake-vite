@@ -1,13 +1,9 @@
 include ../mixins/mixins
 include ../data/data
+
 doctype html
 html(lang='en')
   include ../includes/head
-    block extraHead
-  body#top
-    main
-      block content
-    block extraScripts
   body#top
     input#nav-toggle.nav-toggle(type='checkbox' aria-hidden='true')
     include ../components/header
@@ -26,3 +22,4 @@ html(lang='en')
         path(d='M7 12V2M2.5 6.5L7 2l4.5 4.5')
     include ../components/footer
     script(type='module' src='/src/styles/main.scss')
+    block extraScripts
