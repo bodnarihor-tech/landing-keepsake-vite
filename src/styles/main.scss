@@ -8,7 +8,7 @@
   padding-bottom: 44px;
   background-color: $color-bg-light;
 
-  @include tablet {
+  @include mq(md) {
     padding-top: 64px;
     padding-bottom: 64px;
   }
@@ -23,11 +23,11 @@
   text-transform: uppercase;
   letter-spacing: 3px;
 
-  @include tablet {
+  @include mq(md) {
     font-size: 32px;
   }
 
-  @include desktop {
+  @include mq(lg) {
     font-size: 40px;
   }
 }
@@ -46,7 +46,7 @@
   gap: 12px;
   margin-top: 24px;
 
-  @include tablet {
+  @include mq(md) {
     flex-direction: row;
 
     .btn {
@@ -64,7 +64,7 @@
   flex-direction: column;
   gap: 18px;
 
-  @include desktop {
+  @include mq(lg) {
     flex-direction: row;
     gap: 24px;
     align-items: flex-start;
@@ -81,7 +81,7 @@
   flex-direction: column;
   gap: 20px;
 
-  @include desktop {
+  @include mq(lg) {
     flex: 1 1 auto;
     align-items: flex-end;
   }
@@ -100,7 +100,7 @@
   margin-right: calc(#{$container-px-mobile} * -1);
   overflow-x: auto;
 
-  @include tablet {
+  @include mq(md) {
     flex-wrap: wrap;
     padding-right: 0;
     margin-right: 0;
@@ -132,7 +132,7 @@
     border-color: $color-accent;
   }
 
-  @include tablet {
+  @include mq(md) {
     font-size: 13px;
   }
 }
@@ -171,11 +171,11 @@
   grid-template-columns: 1fr;
   gap: 12px;
 
-  @include tablet {
+  @include mq(md) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include desktop {
+  @include mq(lg) {
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
     width: 100%;
@@ -191,7 +191,7 @@
     display: none;
   }
 
-  @include tablet {
+  @include mq(md) {
     aspect-ratio: 1 / 0.79;
 
     &:nth-child(n + 6) {
@@ -203,7 +203,7 @@
     }
   }
 
-  @include desktop {
+  @include mq(lg) {
     &:nth-child(n) {
       display: block;
     }
@@ -284,7 +284,7 @@
     width: 100%;
   }
 
-  @include tablet {
+  @include mq(md) {
     text-align: center;
 
     .btn {
@@ -313,11 +313,11 @@
   text-transform: uppercase;
   letter-spacing: 3px;
 
-  @include tablet {
+  @include mq(md) {
     font-size: 24px;
   }
 
-  @include desktop {
+  @include mq(lg) {
     font-size: 28px;
   }
 }
@@ -328,7 +328,7 @@
   gap: 32px 20px;
   margin-top: 28px;
 
-  @include desktop {
+  @include mq(lg) {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
   }
@@ -350,7 +350,7 @@
   background-color: $color-bg-light;
   border-radius: $radius-round;
 
-  @include tablet {
+  @include mq(md) {
     width: 96px;
     height: 96px;
   }
@@ -381,7 +381,7 @@
   border-top: 1px solid $color-border;
   border-bottom: 1px solid $color-border;
 
-  @include tablet {
+  @include mq(md) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -401,11 +401,11 @@
   line-height: 1.1;
   color: $color-text-dark;
 
-  @include tablet {
+  @include mq(md) {
     font-size: 40px;
   }
 
-  @include desktop {
+  @include mq(lg) {
     font-size: 48px;
   }
 }
@@ -425,11 +425,11 @@
   align-items: center;
   margin-top: 28px;
 
-  @include tablet {
+  @include mq(md) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @include desktop {
+  @include mq(lg) {
     grid-template-columns: repeat(6, 1fr);
   }
 }
@@ -466,7 +466,7 @@
   margin-top: 32px;
   background-color: $color-bg-light;
 
-  @include tablet {
+  @include mq(md) {
     padding: 36px 40px;
   }
 }
@@ -486,11 +486,11 @@
   line-height: 1.6;
   color: $color-text;
 
-  @include tablet {
+  @include mq(md) {
     font-size: 19px;
   }
 
-  @include desktop {
+  @include mq(lg) {
     font-size: 22px;
   }
 }
@@ -560,7 +560,7 @@
   gap: 28px;
   margin-top: 28px;
 
-  @include desktop {
+  @include mq(lg) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 36px 32px;
@@ -579,7 +579,7 @@
   height: 96px;
   object-fit: cover;
 
-  @include tablet {
+  @include mq(md) {
     flex: 0 0 150px;
     width: 150px;
     height: 150px;

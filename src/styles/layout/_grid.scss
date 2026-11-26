@@ -7,12 +7,12 @@
   padding-left: $container-px-mobile;
   margin: 0 auto;
 
-  @include tablet {
+  @include mq(md) {
     padding-right: $container-px-tablet;
     padding-left: $container-px-tablet;
   }
 
-  @include desktop {
+  @include mq(lg) {
     padding-right: $container-px-desktop;
     padding-left: $container-px-desktop;
   }

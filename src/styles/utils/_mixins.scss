@@ -1,13 +1,14 @@
+@use 'sass:map';
 @use 'variables' as *;
 
-@mixin tablet {
-  @media (min-width: $bp-tablet) {
-    @content;
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
   }
 }
 
-@mixin desktop {
-  @media (min-width: $bp-desktop) {
+@mixin mq($bp) {
+  @media (min-width: map.get($breakpoints, $bp)) {
     @content;
   }
 }

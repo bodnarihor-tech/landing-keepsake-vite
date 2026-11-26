@@ -4,12 +4,12 @@
   padding-top: $section-gap-mobile;
   padding-bottom: $section-gap-mobile;
 
-  @include tablet {
+  @include mq(md) {
     padding-top: $section-gap-tablet;
     padding-bottom: $section-gap-tablet;
   }
 
-  @include desktop {
+  @include mq(lg) {
     padding-top: $section-gap-desktop;
     padding-bottom: $section-gap-desktop;
   }

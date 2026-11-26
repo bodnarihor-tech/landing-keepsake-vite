@@ -8,7 +8,7 @@ body {
   color: $color-text;
   background-color: $color-white;
 
-  @include tablet {
+  @include mq(md) {
     padding-top: $header-height-tablet;
   }
 }
