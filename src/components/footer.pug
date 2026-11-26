@@ -1,5 +1,49 @@
-footer.footer
-    .footer-outer
-        .footer-inner
-            include logo
-            h4 Приєднуйся і живи зі мною у світі солодощів!
+footer#contact.site-footer
+  .container
+    .footer__top
+      .footer__columns
+        .footer-col
+          h2.footer-col__title Studio
+          ul.footer-list
+            li: a.footer-link(href='#about') About us
+            li: a.footer-link(href='#works') Our works
+            li: a.footer-link(href='#journal') Journal
+            li: a.footer-link(href='#careers') Careers
+            li: a.footer-link(href='#contact') Contact
+        .footer-col
+          h2.footer-col__title Services
+          ul.footer-list
+            li: a.footer-link(href='#about') Web design
+            li: a.footer-link(href='#about') Motion video
+            li: a.footer-link(href='#about') Print design
+            li: a.footer-link(href='#about') Illustration
+            li: a.footer-link(href='#about') Brand strategy
+      .newsletter
+        h2.newsletter__title Newsletter
+        p.newsletter__desc Fresh case studies and design notes, once a month.
+        form.newsletter-form(action='#' method='post')
+          label.visually-hidden(for='newsletter-email') Your email address
+          .newsletter-form__row
+            input#newsletter-email.newsletter-form__input(
+              type='email'
+              name='email'
+              placeholder='Your email address'
+              required
+              aria-describedby='newsletter-error'
+            )
+            button.newsletter-form__btn(type='submit') Subscribe
+          p#newsletter-error.newsletter-form__error Please enter a valid email address.
+          label.newsletter-form__agree
+            input(type='checkbox' name='agree' required)
+            span I agree to the privacy policy
+    .footer__bottom
+      p.footer__copy &copy; 2026 Keepsake. All rights reserved.
+      .socials
+        a.social-link.social-link--rss(href='#rss' aria-label='RSS') rss
+        a.social-link.social-link--fb(href='#facebook' aria-label='Facebook') f
+        a.social-link.social-link--tw(href='#twitter' aria-label='Twitter') tw
+        a.social-link.social-link--dr(href='#dribbble' aria-label='Dribbble') dr
+        a.social-link.social-link--pin(
+          href='#pinterest'
+          aria-label='Pinterest'
+        ) p

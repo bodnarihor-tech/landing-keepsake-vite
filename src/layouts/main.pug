@@ -1,21 +1,21 @@
 doctype html
-html(lang="en")
-    head
-        block meta
-            meta(charset="utf-8")
-            meta(name="viewport" content="width=device-width, initial-scale=1")
-        block title
-            title Vite Pug Template
-        block fonts
-        block main-scripts
-        block styles
-            link(rel="stylesheet" href="/src/styles/main.scss")
-    body
-        block data
-        block header
-            header.page-header header
-        block content
-            main.page-main content
-        block footer
-            footer.page-footer footer
-        block add-scripts
+html(lang='en')
+  include ../includes/head
+  body#top
+    input#nav-toggle.nav-toggle(type='checkbox' aria-hidden='true')
+    include ../components/header
+    main
+      block content
+    a.back-to-top(href='#top' aria-label='Back to top')
+      svg(
+        width='14'
+        height='14'
+        viewBox='0 0 14 14'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.8'
+        aria-hidden='true'
+      )
+        path(d='M7 12V2M2.5 6.5L7 2l4.5 4.5')
+    include ../components/footer
+    script(type='module' src='/src/styles/main.scss')

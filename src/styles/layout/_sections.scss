@@ -1,3 +1,41 @@
-section {
-  padding: 3rem 0;
+@use '../utils' as *;
+
+.section {
+  padding-top: $section-gap-mobile;
+  padding-bottom: $section-gap-mobile;
+
+  @include tablet {
+    padding-top: $section-gap-tablet;
+    padding-bottom: $section-gap-tablet;
+  }
+
+  @include desktop {
+    padding-top: $section-gap-desktop;
+    padding-bottom: $section-gap-desktop;
+  }
+}
+
+.section-title {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  font-family: $font-oswald;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $color-text-dark;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  &::after {
+    width: 16px;
+    height: 2px;
+    content: '';
+    background-color: $color-accent;
+  }
+}
+
+.section-lead {
+  margin-top: 10px;
+  color: $color-text;
 }

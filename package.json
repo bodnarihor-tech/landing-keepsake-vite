@@ -1,19 +1,39 @@
 {
-  "name": "vite-pug-template",
+  "name": "landing-keepsake-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "lint": "npm run lint:styles && npm run lint:format",
+    "lint:styles": "stylelint \"src/**/*.scss\"",
+    "lint:format": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{pug,js,json,md}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^3.4.2",
+    "@vituum/vite-plugin-pug": "^1.1.0",
+    "autoprefixer": "^10.4.21",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "sass": "^1.86.3",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.16.0",
+    "stylelint-config-standard-scss": "^14.2.1",
     "vite": "8.3.3",
     "vituum": "^1.2.0"
-  },
-  "dependencies": {
-    "@vituum/vite-plugin-pug": "^1.1.0",
-    "sass": "^1"
   }
 }

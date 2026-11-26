@@ -1,15 +1,218 @@
-@use '../utils/mixins' as *;
+@use '../utils' as *;
 
-.header {
-  // declare mixins before styles
+.nav-toggle {
+  display: none;
+}
 
-  @include flex-center;
-  background: var(--color-primary);
-  color: white;
-  padding: 1rem;
-  text-align: center;
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-border;
+}
 
-  h1 {
-    font-size: 2rem;
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: $header-height-mobile;
+
+  @include tablet {
+    min-height: $header-height-tablet;
   }
+}
+
+.logo {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.logo__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-family: $font-dancing;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  color: $color-white;
+  background-color: $color-text-dark;
+  border-radius: $radius-round;
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+.logo__text {
+  font-family: $font-dancing;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: $color-text-dark;
+
+  @include tablet {
+    font-size: 26px;
+  }
+}
+
+.desktop-nav {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  @include desktop {
+    gap: 32px;
+  }
+}
+
+.nav-list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  @include desktop {
+    gap: 32px;
+  }
+}
+
+.nav-link {
+  font-family: $font-oswald;
+  font-size: 13px;
+  color: $color-text-dark;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &.is-active,
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: $color-white;
+  background-color: $color-accent;
+
+  &:hover {
+    background-color: $color-accent-hover;
+  }
+}
+
+.burger-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: $color-text-dark;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.burger-btn__lines {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background-color: currentcolor;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    content: '';
+    background-color: currentcolor;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    top: 6px;
+  }
+}
+
+.mobile-menu {
+  display: none;
+  background-color: $color-white;
+  border-top: 1px solid $color-border;
+}
+
+.nav-toggle:checked ~ .site-header .mobile-menu {
+  display: block;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.mobile-nav__list {
+  padding: 8px $container-px-mobile;
+}
+
+.mobile-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  font-family: $font-oswald;
+  font-size: 16px;
+  color: $color-text-dark;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid $color-bg-light;
+
+  &.is-active,
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.mobile-menu__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px $container-px-mobile 28px;
+}
+
+.mobile-menu__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px $container-px-mobile;
+  background-color: $color-bg-light;
+}
+
+.mobile-menu__label {
+  font-family: $font-oswald;
+  font-size: 11px;
+  color: $color-muted;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mobile-menu__contact {
+  font-size: 13px;
+  color: $color-text;
 }

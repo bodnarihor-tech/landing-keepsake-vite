@@ -1,4 +1,88 @@
-header.header
-    .header-inner
-        include logo
-        include navigation
+header.site-header
+  .container.header__inner
+    a.logo(href='#top' aria-label='Keepsake Home')
+      span.logo__mark(aria-hidden='true') K
+      span.logo__text eepsake
+    nav.desktop-nav(aria-label='Primary navigation')
+      ul.nav-list
+        li: a.nav-link.is-active(href='#top') Home
+        li: a.nav-link(href='#about') About us
+        li: a.nav-link(href='#works') Our works
+        li: a.nav-link(href='#journal') Journal
+        li: a.nav-link(href='#contact') Contact
+      a.fav-btn(href='#favourites' aria-label='Favourites')
+        svg(
+          width='16'
+          height='15'
+          viewBox='0 0 16 15'
+          fill='currentColor'
+          aria-hidden='true'
+        )
+          path(
+            d='M8 14.2l-1.15-1.05C2.75 9.44 0 6.95 0 3.9 0 1.42 1.94 0 4.4 0c1.38 0 2.71.64 3.6 1.65C8.89.64 10.22 0 11.6 0 14.06 0 16 1.42 16 3.9c0 3.05-2.75 5.54-6.85 9.26L8 14.2z'
+          )
+    label.burger-btn(for='nav-toggle')
+      span.sr-only Toggle mobile menu
+      span.burger-btn__lines(aria-hidden='true')
+  #mobile-menu.mobile-menu
+    nav(aria-label='Mobile navigation')
+      ul.mobile-nav__list
+        li
+          a.mobile-nav__link.is-active(href='#top')
+            span Home
+            span(aria-hidden='true') &rsaquo;
+        li
+          a.mobile-nav__link(href='#about')
+            span About us
+            span(aria-hidden='true') &rsaquo;
+        li
+          a.mobile-nav__link(href='#works')
+            span Our works
+            span(aria-hidden='true') &rsaquo;
+        li
+          a.mobile-nav__link(href='#journal')
+            span Journal
+            span(aria-hidden='true') &rsaquo;
+        li
+          a.mobile-nav__link(href='#contact')
+            span Contact
+            span(aria-hidden='true') &rsaquo;
+    .mobile-menu__actions
+      a.btn.btn--primary.btn--full(href='#contact')
+        svg(
+          width='16'
+          height='12'
+          viewBox='0 0 16 12'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='1.5'
+          aria-hidden='true'
+        )
+          rect(x='1' y='1' width='14' height='10')
+          path(d='M1 2l7 5 7-5')
+        span Contact us
+      a.btn.btn--outline.btn--full(href='#favourites')
+        svg(
+          width='14'
+          height='13'
+          viewBox='0 0 16 15'
+          fill='currentColor'
+          aria-hidden='true'
+        )
+          path(
+            d='M8 14.2l-1.15-1.05C2.75 9.44 0 6.95 0 3.9 0 1.42 1.94 0 4.4 0c1.38 0 2.71.64 3.6 1.65C8.89.64 10.22 0 11.6 0 14.06 0 16 1.42 16 3.9c0 3.05-2.75 5.54-6.85 9.26L8 14.2z'
+          )
+        span Favourites
+    .mobile-menu__footer
+      p.mobile-menu__label Say hello
+      a.mobile-menu__contact(href='mailto:hello@keepsake.studio') hello@keepsake.studio
+      a.mobile-menu__contact(href='tel:+442079460000') +44 20 7946 0000
+      .socials
+        a.social-link.social-link--rss(href='#rss' aria-label='RSS') rss
+        a.social-link.social-link--fb(href='#facebook' aria-label='Facebook') f
+        a.social-link.social-link--tw(href='#twitter' aria-label='Twitter') tw
+        a.social-link.social-link--dr(href='#dribbble' aria-label='Dribbble') dr
+        a.social-link.social-link--pin(
+          href='#pinterest'
+          aria-label='Pinterest'
+        ) p

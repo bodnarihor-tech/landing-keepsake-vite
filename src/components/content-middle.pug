@@ -1,13 +1,122 @@
-.middle-block-outer
-    .middle-block-inner
-        h2#favourite
-            span МОЇ УЛЮБЛЕНІ
-            |  СОЛОДОЩІ
-        .cards-wrapper
-            ul.list-cards
-                each card, id in cards
-                    li(class="card card-" + (id+1))
-                        img(src='/src/assets/' + card.image)
-                        .card-text-part
-                            h3= card.title
-                            p= card.description
+section.section.cta
+  .container.cta__inner
+    h2.cta__title Would you love to work with us?
+    a.btn.btn--primary(href='#contact')
+      svg(
+        width='16'
+        height='12'
+        viewBox='0 0 16 12'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        aria-hidden='true'
+      )
+        rect(x='1' y='1' width='14' height='10')
+        path(d='M1 2l7 5 7-5')
+      span Contact us
+
+section#about.section.services
+  .container
+    h2.section-title What do we do
+    p.section-lead We are a small team of designers and makers who help brands look their best online and offline.
+    .services-list
+      article.service-item
+        .service-item__icon(aria-hidden='true')
+          svg(width='32' height='26' viewBox='0 0 32 26' fill='none')
+            rect(
+              x='2'
+              y='2'
+              width='28'
+              height='22'
+              stroke='#3a3a3c'
+              stroke-width='2.2'
+            )
+            rect(x='7' y='7' width='8' height='6' fill='#2cd5c4')
+        h3.service-item__title Web design
+        p.service-item__desc Responsive sites and product interfaces that look sharp on every screen.
+      article.service-item
+        .service-item__icon(aria-hidden='true')
+          svg(width='30' height='24' viewBox='0 0 30 24' fill='none')
+            rect(
+              x='2'
+              y='2'
+              width='26'
+              height='20'
+              rx='4'
+              stroke='#3a3a3c'
+              stroke-width='2.2'
+            )
+            rect(
+              x='7'
+              y='6'
+              width='16'
+              height='12'
+              fill='#2cd5c4'
+              opacity='0.55'
+            )
+        h3.service-item__title Motion video
+        p.service-item__desc Explainers, logo animations and social clips that bring brands to life.
+      article.service-item
+        .service-item__icon(aria-hidden='true')
+          svg(width='30' height='28' viewBox='0 0 30 28' fill='none')
+            rect(x='9' y='2' width='12' height='8' fill='#f2b830')
+            rect(x='3' y='10' width='24' height='11' rx='2' fill='#666a6e')
+            rect(x='7' y='18' width='16' height='8' fill='#d5dce0')
+        h3.service-item__title Print design
+        p.service-item__desc Posters, packaging and stationery prepared to be printed right.
+      article.service-item
+        .service-item__icon(aria-hidden='true')
+          svg(
+            width='26'
+            height='24'
+            viewBox='0 0 26 24'
+            fill='#f95858'
+            aria-hidden='true'
+          )
+            path(
+              d='M13 22.5l-1.8-1.65C4.5 14.9 0 10.8 0 6 0 2.5 2.7 0 6 0c1.9 0 3.7.9 4.9 2.3C12.1.9 13.9 0 15.8 0c3.3 0 6 2.5 6 6 0 4.8-4.5 8.9-11.2 14.85L13 22.5z'
+              transform='translate(2, 1)'
+            )
+        h3.service-item__title Illustration
+        p.service-item__desc Custom illustrations and icon sets in a style that is yours alone.
+
+section.section.stats(aria-label='Agency statistics')
+  .container
+    .stats__inner
+      .stat-item
+        span.stat-item__value 120+
+        span.stat-item__label Projects done
+      .stat-item
+        span.stat-item__value 8
+        span.stat-item__label Years in craft
+      .stat-item
+        span.stat-item__value 64
+        span.stat-item__label Happy clients
+      .stat-item
+        span.stat-item__value 15
+        span.stat-item__label Design awards
+
+section.section.clients
+  .container
+    h2.section-title Clients &amp; kind words
+    p.section-lead Some of the teams that trusted us with their brands.
+    ul.clients-logos
+      li.client-logo NORDLY
+      li.client-logo.client-logo--serif Halcyon
+      li.client-logo.client-logo--narrow ARCO
+      li.client-logo.client-logo--bold pinewood
+      li.client-logo.client-logo--serif-bold VELA
+      li.client-logo.client-logo--narrow ostra
+    blockquote.testimonial
+      span.testimonial__quote(aria-hidden='true') &ldquo;
+      p.testimonial__text Keepsake turned a vague brief into a brand we are proud of. The team was fast, honest about trade-offs and obsessed with the details.
+      footer.testimonial__footer
+        .testimonial__author
+          span.testimonial__avatar(aria-hidden='true') OM
+          div
+            cite.testimonial__name Olena Marchenko
+            span.testimonial__role Marketing Lead, Nordly
+        .testimonial__dots(aria-hidden='true')
+          span.dot.is-active
+          span.dot
+          span.dot

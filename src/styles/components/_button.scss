@@ -1,13 +1,46 @@
-.button {
-  background: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  transition: background 0.2s;
+@use '../utils' as *;
 
-  &:hover {
+.btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 22px;
+  font-family: $font-oswald;
+  font-size: 12px;
+  font-weight: 400;
+  color: $color-text-dark;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 
+  &--full {
+    width: 100%;
+  }
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-accent;
+    border: 1px solid $color-accent;
+
+    &:hover {
+      background-color: $color-accent-hover;
+      border-color: $color-accent-hover;
+    }
+  }
+
+  &--outline {
+    color: $color-text-dark;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+
+    &:hover {
+      color: $color-accent;
+      border-color: $color-accent;
+    }
   }
 }

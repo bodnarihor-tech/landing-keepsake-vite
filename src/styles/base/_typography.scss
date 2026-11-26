@@ -1,16 +1,24 @@
-*, html, body {
-  font-family: "Montserrat", sans-serif;
+@use '../utils' as *;
+
+body {
+  padding-top: $header-height-mobile;
+  font-family: $font-opensans;
+  font-size: 14px;
+  line-height: 22px;
+  color: $color-text;
+  background-color: $color-white;
+
+  @include tablet {
+    padding-top: $header-height-tablet;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+:focus-visible {
+  outline: 2px solid $color-teal;
+  outline-offset: 2px;
 }
 
-a {
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+.visually-hidden,
+.sr-only {
+  @include visually-hidden;
 }

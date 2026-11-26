@@ -1,14 +1,57 @@
-.bottom-block-outer
-    .bottom-block-inner
-        .left-part
-            h2#tip
-                span ПОРАДА –
-                |  ВІД YUMMY
-            p.tip-desc З'ївши чергову шоколадку, ви не просто набираєте трохи додаткових калорій, але покращуєте тим самим роботу мозку, настрій і стаєте трішки добрішим. Вирішивши поласувати шоколадкою, віддавайте перевагу саме чорному шоколаду з високим вмістом какао-бобів. У цьому вигляді шоколаду менше жиру і цукру, ніж в молочному шоколаді, але зате магнію, кальцію, заліза, білка, антиоксидантів і вітамінів предостатньо.
-            .list-block
-                h3.text-tip Солодощі, які радить їсти Ямі:
-                ul(class="sweet-list")
-                    each sweet in sweets
-                        li(class="sweet")= sweet
-        .right-part
-            img(src="/src/assets/pug2.png" alt="pug2" class="pug2-img")
+section#journal.section.journal
+  .container
+    h2.section-title From the journal
+    p.section-lead Notes on process, case studies and things that inspire us.
+    .journal-grid
+      article.journal-card
+        img.journal-card__thumb(
+          src='../assets/journal-01.webp'
+          alt='Editorial square artwork for Sollicitudin Tortor Inceptos'
+          width='150'
+          height='150'
+          loading='lazy'
+        )
+        .journal-card__body
+          p.journal-card__meta Oct 13, 2026 / Identity
+          h3.journal-card__title Sollicitudin tortor inceptos
+          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
+          a.journal-card__link(href='#post-1') Read more &rsaquo;
+      article.journal-card
+        img.journal-card__thumb(
+          src='../assets/journal-02.webp'
+          alt='Editorial square artwork for Amet Inceptos Fringilla Fusce'
+          width='150'
+          height='150'
+          loading='lazy'
+        )
+        .journal-card__body
+          p.journal-card__meta Oct 23, 2026 / Branding
+          h3.journal-card__title Amet inceptos fringilla fusce
+          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
+          a.journal-card__link(href='#post-2') Read more &rsaquo;
+      article.journal-card
+        img.journal-card__thumb(
+          src='../assets/journal-03.webp'
+          alt='Editorial square artwork for Cursus Malesuada Justo'
+          width='150'
+          height='150'
+          loading='lazy'
+        )
+        .journal-card__body
+          p.journal-card__meta Sep 19, 2026 / Identity
+          h3.journal-card__title Cursus malesuada justo
+          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
+          a.journal-card__link(href='#post-3') Read more &rsaquo;
+      article.journal-card
+        img.journal-card__thumb(
+          src='../assets/journal-04.webp'
+          alt='Editorial square artwork for Ornare Cursus Bibendum Purus'
+          width='150'
+          height='150'
+          loading='lazy'
+        )
+        .journal-card__body
+          p.journal-card__meta Sep 27, 2026 / Branding
+          h3.journal-card__title Ornare cursus bibendum purus
+          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
+          a.journal-card__link(href='#post-4') Read more &rsaquo;

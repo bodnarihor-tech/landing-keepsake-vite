@@ -1,10 +1,173 @@
-.top-block-outer
-    .top-block-inner
-        .left-part
-            h1.main-title
-                span YUMMY
-                |  PUG
-            p.top-desc Всім привіт, я Ямі і я мопс, який дуже сильно полюбляє солодощі. Сьогодні я розкажу вам, чому саме солодощі і чому вони так важливі в нашому житті. Доречі, моє імʼя з англійської мови перекладається як “Смачний”.
-            a(href=navLinks[0].href class="button top-block-button")= navLinks[0].text
-        .right-part
-            img(src="/src/assets/pug1.png" alt="pug1" class="pug1-img")
+section.hero
+  .container
+    h1.hero__title We&apos;re Keepsake, a digital &amp; branding agency
+    p.hero__subtitle Specializing in web design, poster, motion video, based in London. We love to turn ideas into beautiful things.
+    .hero__actions
+      a.btn.btn--primary(href='#works') See our works
+      a.btn.btn--outline(href='#contact') Get in touch
+
+section#works.section.portfolio
+  .container
+    .portfolio__top
+      h2.section-title Our awesome works
+      .filters-wrapper
+        input#filter-all.filter-input.filter-input--all(
+          type='radio'
+          name='portfolio-filter'
+          checked
+        )
+        input#filter-branding.filter-input.filter-input--branding(
+          type='radio'
+          name='portfolio-filter'
+        )
+        input#filter-identity.filter-input.filter-input--identity(
+          type='radio'
+          name='portfolio-filter'
+        )
+        input#filter-print.filter-input.filter-input--print(
+          type='radio'
+          name='portfolio-filter'
+        )
+        input#filter-web.filter-input.filter-input--web(
+          type='radio'
+          name='portfolio-filter'
+        )
+        input#filter-motion.filter-input.filter-input--motion(
+          type='radio'
+          name='portfolio-filter'
+        )
+        .filters(role='group' aria-label='Filter works by category')
+          label.chip.chip--all(for='filter-all') All
+          label.chip.chip--branding(for='filter-branding') Branding
+          label.chip.chip--identity(for='filter-identity') Identity
+          label.chip.chip--print(for='filter-print') Print
+          label.chip.chip--web(for='filter-web') Web
+          label.chip.chip--motion(for='filter-motion') Motion
+        .portfolio-grid
+          article.work-card(data-category='branding')
+            a.work-card__link(href='#work-1')
+              img.work-card__img(
+                src='../assets/work-01.webp'
+                alt='Mock-up tag branding project'
+                width='400'
+                height='316'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Clothes tag
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Branding
+          article.work-card(data-category='print')
+            a.work-card__link(href='#work-2')
+              img.work-card__img(
+                src='../assets/work-02.webp'
+                alt='Piece Paper graphic print project'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Piece paper
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Print
+          article.work-card(data-category='motion')
+            a.work-card__link(href='#work-3')
+              img.work-card__img(
+                src='../assets/work-03.webp'
+                alt='Vinyl sleeve motion concept'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Disc sleeve
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Motion
+          article.work-card(data-category='identity')
+            a.work-card__link(href='#work-4')
+              img.work-card__img(
+                src='../assets/work-04.webp'
+                alt='Vol. 16 editorial identity'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Vol. 16
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Identity
+          article.work-card(data-category='web')
+            a.work-card__link(href='#work-5')
+              img.work-card__img(
+                src='../assets/work-05.webp'
+                alt='Profile UI web interface'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Profile UI
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Web
+          article.work-card(data-category='branding')
+            a.work-card__link(href='#work-6')
+              img.work-card__img(
+                src='../assets/work-06.webp'
+                alt='Editorial spread branding'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Spread concept
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Branding
+          article.work-card(data-category='identity')
+            a.work-card__link(href='#work-7')
+              img.work-card__img(
+                src='../assets/work-07.webp'
+                alt='WallSt. brand identity'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title WallSt.
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Identity
+          article.work-card(data-category='branding')
+            a.work-card__link(href='#work-8')
+              img.work-card__img(
+                src='../assets/work-08.webp'
+                alt='John Doe design studio card'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title John Doe studio
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Branding
+          article.work-card(data-category='branding')
+            a.work-card__link(href='#work-9')
+              img.work-card__img(
+                src='../assets/work-09.webp'
+                alt='Seal Fabric stamp branding'
+                width='400'
+                height='316'
+                loading='lazy'
+              )
+              .work-card__overlay
+                span.work-card__plus(aria-hidden='true') +
+                h3.work-card__title Seal fabric
+                span.work-card__line(aria-hidden='true')
+                span.work-card__cat Branding
+    .portfolio__more
+      button.btn.btn--outline(type='button') Load more works
