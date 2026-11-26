@@ -1,0 +1,154 @@
+//- src/mixins/mixins.pug
+//- Службові коментарі //- не потрапляють у фінальний HTML
+
+mixin btn(text, href, variant = 'primary')
+  - const modifierClass = variant === 'outline' ? 'btn--outline' : 'btn--primary';
+  if href
+    a.btn(href=href class=modifierClass)&attributes(attributes)
+      if block
+        block
+      if text
+        span= text
+  else
+    button.btn(type='button' class=modifierClass)&attributes(attributes)
+      if block
+        block
+      if text
+        span= text
+
+mixin icon(name)
+  case name
+    when 'mail'
+      svg(
+        width='16'
+        height='12'
+        viewBox='0 0 16 12'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.5'
+        aria-hidden='true'
+      )&attributes(attributes)
+        rect(x='1' y='1' width='14' height='10')
+        path(d='M1 2l7 5 7-5')
+    when 'web'
+      svg(
+        width='32'
+        height='26'
+        viewBox='0 0 32 26'
+        fill='none'
+        aria-hidden='true'
+      )&attributes(attributes)
+        rect(
+          x='2'
+          y='2'
+          width='28'
+          height='22'
+          stroke='#3a3a3c'
+          stroke-width='2.2'
+        )
+        rect(x='7' y='7' width='8' height='6' fill='#2cd5c4')
+    when 'motion'
+      svg(
+        width='30'
+        height='24'
+        viewBox='0 0 30 24'
+        fill='none'
+        aria-hidden='true'
+      )&attributes(attributes)
+        rect(
+          x='2'
+          y='2'
+          width='26'
+          height='20'
+          rx='4'
+          stroke='#3a3a3c'
+          stroke-width='2.2'
+        )
+        rect(x='7' y='6' width='16' height='12' fill='#2cd5c4' opacity='0.55')
+    when 'print'
+      svg(
+        width='30'
+        height='28'
+        viewBox='0 0 30 28'
+        fill='none'
+        aria-hidden='true'
+      )&attributes(attributes)
+        rect(x='9' y='2' width='12' height='8' fill='#f2b830')
+        rect(x='3' y='10' width='24' height='11' rx='2' fill='#666a6e')
+        rect(x='7' y='18' width='16' height='8' fill='#d5dce0')
+    when 'heart'
+      svg(
+        width='26'
+        height='24'
+        viewBox='0 0 26 24'
+        fill='#f95858'
+        aria-hidden='true'
+      )&attributes(attributes)
+        path(
+          d='M13 22.5l-1.8-1.65C4.5 14.9 0 10.8 0 6 0 2.5 2.7 0 6 0c1.9 0 3.7.9 4.9 2.3C12.1.9 13.9 0 15.8 0c3.3 0 6 2.5 6 6 0 4.8-4.5 8.9-11.2 14.85L13 22.5z'
+          transform='translate(2, 1)'
+        )
+    default
+      svg(
+        width='14'
+        height='14'
+        viewBox='0 0 14 14'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='1.8'
+        aria-hidden='true'
+      )&attributes(attributes)
+        path(d='M7 12V2M2.5 6.5L7 2l4.5 4.5')
+
+mixin picture(opts)
+  -
+    const {
+      basePath,
+      alt = '',
+      width = 800,
+      height = 600,
+      sizes = '100vw',
+      lazy = true,
+      highPriority = false,
+      imgClass = '',
+    } = opts
+  picture&attributes(attributes)
+    source(
+      type='image/avif'
+      srcset=`${basePath}-400.avif 400w, ${basePath}-800.avif 800w`
+      sizes=sizes
+    )
+    source(
+      type='image/webp'
+      srcset=`${basePath}-400.webp 400w, ${basePath}-800.webp 800w`
+      sizes=sizes
+    )
+    if lazy
+      img(
+        src=`${basePath}-800.jpg`
+        alt=alt
+        width=width
+        height=height
+        loading='lazy'
+        decoding='async'
+        class=imgClass
+      )
+    else if highPriority
+      img(
+        src=`${basePath}-800.jpg`
+        alt=alt
+        width=width
+        height=height
+        fetchpriority='high'
+        decoding='async'
+        class=imgClass
+      )
+    else
+      img(
+        src=`${basePath}-800.jpg`
+        alt=alt
+        width=width
+        height=height
+        decoding='async'
+        class=imgClass
+      )

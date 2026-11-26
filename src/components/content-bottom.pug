@@ -3,55 +3,17 @@ section#journal.section.journal
     h2.section-title From the journal
     p.section-lead Notes on process, case studies and things that inspire us.
     .journal-grid
-      article.journal-card
-        img.journal-card__thumb(
-          src='../assets/journal-01.webp'
-          alt='Editorial square artwork for Sollicitudin Tortor Inceptos'
-          width='150'
-          height='150'
-          loading='lazy'
-        )
-        .journal-card__body
-          p.journal-card__meta Oct 13, 2026 / Identity
-          h3.journal-card__title Sollicitudin tortor inceptos
-          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
-          a.journal-card__link(href='#post-1') Read more &rsaquo;
-      article.journal-card
-        img.journal-card__thumb(
-          src='../assets/journal-02.webp'
-          alt='Editorial square artwork for Amet Inceptos Fringilla Fusce'
-          width='150'
-          height='150'
-          loading='lazy'
-        )
-        .journal-card__body
-          p.journal-card__meta Oct 23, 2026 / Branding
-          h3.journal-card__title Amet inceptos fringilla fusce
-          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
-          a.journal-card__link(href='#post-2') Read more &rsaquo;
-      article.journal-card
-        img.journal-card__thumb(
-          src='../assets/journal-03.webp'
-          alt='Editorial square artwork for Cursus Malesuada Justo'
-          width='150'
-          height='150'
-          loading='lazy'
-        )
-        .journal-card__body
-          p.journal-card__meta Sep 19, 2026 / Identity
-          h3.journal-card__title Cursus malesuada justo
-          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
-          a.journal-card__link(href='#post-3') Read more &rsaquo;
-      article.journal-card
-        img.journal-card__thumb(
-          src='../assets/journal-04.webp'
-          alt='Editorial square artwork for Ornare Cursus Bibendum Purus'
-          width='150'
-          height='150'
-          loading='lazy'
-        )
-        .journal-card__body
-          p.journal-card__meta Sep 27, 2026 / Branding
-          h3.journal-card__title Ornare cursus bibendum purus
-          p.journal-card__excerpt Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.
-          a.journal-card__link(href='#post-4') Read more &rsaquo;
+      each post in journalPosts
+        article.journal-card
+          img.journal-card__thumb(
+            src=post.src
+            alt=post.alt
+            width='150'
+            height='150'
+            loading='lazy'
+          )
+          .journal-card__body
+            p.journal-card__meta= post.meta
+            h3.journal-card__title= post.title
+            p.journal-card__excerpt= post.excerpt
+            a.journal-card__link(href=post.href) Read more &rsaquo;

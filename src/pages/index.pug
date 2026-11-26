@@ -1,3 +1,10 @@
 extends ../layouts/main
+
+block prepend extraHead
+  meta(name='theme-color' content='#2cd5c4')
+
+block append extraHead
+  meta(name='og:title' content='Keepsake — Digital & Branding Agency')
+
 block content
   include ../components/content

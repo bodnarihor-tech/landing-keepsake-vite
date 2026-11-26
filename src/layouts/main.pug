@@ -1,6 +1,13 @@
+include ../mixins/mixins
+include ../data/data
 doctype html
 html(lang='en')
   include ../includes/head
+    block extraHead
+  body#top
+    main
+      block content
+    block extraScripts
   body#top
     input#nav-toggle.nav-toggle(type='checkbox' aria-hidden='true')
     include ../components/header

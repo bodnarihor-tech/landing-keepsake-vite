@@ -1,5 +1,189 @@
-- const navLinks = [{href: '#favourite', text: 'Мої улюблені солодощі'}, {href: '#tip', text: 'Порада від Yummy'}]
+//- src/data/data.pug
+-
+  const services = [
+    {
+      icon: 'web',
+      title: 'Web design',
+      desc: 'Responsive sites and product interfaces that look sharp on every screen.'
+    },
+    {
+      icon: 'motion',
+      title: 'Motion video',
+      desc: 'Explainers, logo animations and social clips that bring brands to life.'
+    },
+    {
+      icon: 'print',
+      title: 'Print design',
+      desc: 'Posters, packaging and stationery prepared to be printed right.'
+    },
+    {
+      icon: 'heart',
+      title: 'Illustration',
+      desc: 'Custom illustrations and icon sets in a style that is yours alone.'
+    }
+  ]
 
-- const cards = [{image: 'card1.png', title: 'Червоний мак', description: 'Пралене з додаванням карамельної крихти, пасти ядер горіхів фундука та мигдалюпокрите шоколадною глазурʼю'}, {image: 'card2.png', title: 'Сливки-ленивки', description: 'Світлі вафельні листи, поєднані молочно-вершковою начинкою та покриті глазур’ю.'}, {image: 'card3.png', title: 'Ліщина', description: 'Праліне з додаванням подрібненої та тертої ліщини та мигдалю, покрите шоколадною глазур’ю.'}]
+-
+  const stats = [
+    { value: '120+', label: 'Projects done' },
+    { value: '8', label: 'Years in craft' },
+    { value: '64', label: 'Happy clients' },
+    { value: '15', label: 'Design awards' }
+  ]
 
-- const sweets = ['Чорний шоколад', 'Зефір', 'Пастила', 'Мармелад', 'Мед', 'Халва', 'Цукати'];
+-
+  const clients = [
+    { name: 'NORDLY', modifier: '' },
+    { name: 'Halcyon', modifier: 'client-logo--serif' },
+    { name: 'ARCO', modifier: 'client-logo--narrow' },
+    { name: 'pinewood', modifier: 'client-logo--bold' },
+    { name: 'VELA', modifier: 'client-logo--serif-bold' },
+    { name: 'ostra', modifier: 'client-logo--narrow' }
+  ]
+-
+  const portfolioFilters = [
+    { id: 'all', label: 'All', checked: true },
+    { id: 'branding', label: 'Branding', checked: false },
+    { id: 'identity', label: 'Identity', checked: false },
+    { id: 'print', label: 'Print', checked: false },
+    { id: 'web', label: 'Web', checked: false },
+    { id: 'motion', label: 'Motion', checked: false }
+  ]
+
+-
+  const works = [
+    {
+      href: '#work-1',
+      category: 'branding',
+      categoryLabel: 'Branding',
+      title: 'Clothes tag',
+      src: '../assets/work-01.webp',
+      alt: 'Mock-up tag branding project',
+      width: 400,
+      height: 316,
+      lazy: false
+    },
+    {
+      href: '#work-2',
+      category: 'print',
+      categoryLabel: 'Print',
+      title: 'Piece paper',
+      src: '../assets/work-02.webp',
+      alt: 'Piece Paper graphic print project',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-3',
+      category: 'motion',
+      categoryLabel: 'Motion',
+      title: 'Disc sleeve',
+      src: '../assets/work-03.webp',
+      alt: 'Vinyl sleeve motion concept',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-4',
+      category: 'identity',
+      categoryLabel: 'Identity',
+      title: 'Vol. 16',
+      src: '../assets/work-04.webp',
+      alt: 'Vol. 16 editorial identity',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-5',
+      category: 'web',
+      categoryLabel: 'Web',
+      title: 'Profile UI',
+      src: '../assets/work-05.webp',
+      alt: 'Profile UI web interface',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-6',
+      category: 'branding',
+      categoryLabel: 'Branding',
+      title: 'Spread concept',
+      src: '../assets/work-06.webp',
+      alt: 'Editorial spread branding',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-7',
+      category: 'identity',
+      categoryLabel: 'Identity',
+      title: 'WallSt.',
+      src: '../assets/work-07.webp',
+      alt: 'WallSt. brand identity',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-8',
+      category: 'branding',
+      categoryLabel: 'Branding',
+      title: 'John Doe studio',
+      src: '../assets/work-08.webp',
+      alt: 'John Doe design studio card',
+      width: 400,
+      height: 316,
+      lazy: true
+    },
+    {
+      href: '#work-9',
+      category: 'branding',
+      categoryLabel: 'Branding',
+      title: 'Seal fabric',
+      src: '../assets/work-09.webp',
+      alt: 'Seal Fabric stamp branding',
+      width: 400,
+      height: 316,
+      lazy: true
+    }
+  ]
+-
+  const journalPosts = [
+    {
+      href: '#post-1',
+      src: '../assets/journal-01.webp',
+      alt: 'Editorial square artwork for Sollicitudin Tortor Inceptos',
+      meta: 'Oct 13, 2026 / Identity',
+      title: 'Sollicitudin tortor inceptos',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.'
+    },
+    {
+      href: '#post-2',
+      src: '../assets/journal-02.webp',
+      alt: 'Editorial square artwork for Amet Inceptos Fringilla Fusce',
+      meta: 'Oct 23, 2026 / Branding',
+      title: 'Amet inceptos fringilla fusce',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.'
+    },
+    {
+      href: '#post-3',
+      src: '../assets/journal-03.webp',
+      alt: 'Editorial square artwork for Cursus Malesuada Justo',
+      meta: 'Sep 19, 2026 / Identity',
+      title: 'Cursus malesuada justo',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.'
+    },
+    {
+      href: '#post-4',
+      src: '../assets/journal-04.webp',
+      alt: 'Editorial square artwork for Ornare Cursus Bibendum Purus',
+      meta: 'Sep 27, 2026 / Branding',
+      title: 'Ornare cursus bibendum purus',
+      excerpt: 'Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.'
+    }
+  ]
